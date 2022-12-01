@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Flip#$%^Flop}
 
     volumes:
-      - ./data/postgres
+      - ./data:var/lib/postgres
     ports:
       - '5432:5432'
 
