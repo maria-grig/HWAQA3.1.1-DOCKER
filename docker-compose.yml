@@ -5,11 +5,13 @@ services:
     container_name: postgres_container
     image: postgres:latest
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-hwpostgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Flip#$%^Flop}
+      - POSTGRES_DB=db
+      - POSTGRES_PASSWORD=flip#$%^flop
+      - POSTGRES_USER=maryg
 
     volumes:
-      - ./data:var/lib/postgres
+      - ./data:/var/lib/postgresql/data
+
     ports:
       - '5432:5432'
 
